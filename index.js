@@ -149,17 +149,36 @@ ${colorText("- ", "ansi-green")}<b>Operating System: </b>${getOS()}
 ${colorText("- ", "ansi-green")}<b>Browser: </b>${colorText(getBrowser(), "ansi-blue")}${colorText(getBrowserCaption(), "ansi-gray")}
 ${colorText("─────────────────────────────────────────────────────", "ansi-green")}
 
-${colorText("ContyOS Team        : https://github.com/advaitconty", "ansi-gray")}
+${colorText("ContyOS Team        :", "ansi-gray")} ${colorText("https://github.com/advaitconty", "ansi-gray")}
 ${colorText("Web Hosting by      : Vercel", "ansi-gray")}
 ${colorText("Message by the team : Made with <3 by advaitconty", "ansi-gray")}
 
-help       ${colorText(":", "ansi-green")} Get help with commands
-about      ${colorText(":", "ansi-green")} Learn more about who this is made by
-starred    ${colorText(":", "ansi-green")} Take a look at the projects I have starred on my GitHub
-projects   ${colorText(":", "ansi-green")} Take a look at the projects I have starred on my GitHub
-images     ${colorText(":", "ansi-green")} Check out the images I have taken
-clear      ${colorText(":", "ansi-green")} Clear the terminal screen
+help         ${colorText(":", "ansi-green")} Get help with commands
+about        ${colorText(":", "ansi-green")} Learn more about who this is made by
+starred      ${colorText(":", "ansi-green")} Take a look at the projects I have starred on my GitHub
+projects     ${colorText(":", "ansi-green")} Take a look at the projects I have starred on my GitHub
+images       ${colorText(":", "ansi-green")} Check out the images I have taken
+achievements ${colorText(":", "ansi-green")} See what I've done in competitions
+random-cmds  ${colorText(":", "ansi-green")} Check out some random commands I've implemented
+clear        ${colorText(":", "ansi-green")} Clear the terminal screen
 `;
+
+let random_comamands = `Aight so here are some random commands
+curl   : literally acts like the real curl command
+cowsay : one of the most random linux features ever
+`
+
+let achievements = `Here are my best achievements:
+<b> Persoanl</b>
+2024: <a class="ansi-yellow" href="https://www.simcconline.org/drct/">Dr. CT International</a> ${colorText("Silver award", "silver")}
+2024: <a class="ansi-yellow" href="https://www.amt.edu.au/amo">Australian Maths Olympiad</a> ${colorText("Honourable Mention", "mention")}
+2024: <a class="ansi-yellow" href="https://www.stpatricks.moe.edu.sg/">(School based)</a> ${colorText("Best in Computing and SS + Elective Geography", "gold")}
+
+<b> Team-Based</b>
+2024: <a class="ansi-yellow" href="https://www.mindef.gov.sg/news-and-events/latest-releases/20jan24_nr2">Sentinel Challenge</a> Participation with <a class="ansi-green" href="https://github.com/BrianJ09">Brian Joseph</a>, Tan Chee Tiong and Aaron Tan
+2024: <a class="ansi-yellow" href="https://www.science.edu.sg/for-schools/competitions/national-stem-championship">National STEM Championship</a> Participation with <a class="ansi-green" href="https://github.com/BrianJ09">Brian Joseph</a>, Atman Tripathy and Ahan Goyal
+2023: <a class="ansi-yellow" href="https://swiftinsg.org/">Swift Accelerator Programme</a> Class of 2023, making <a class="ansi-yellow" href="https://github.com/contyadvait/fitstreak">FitStreak</a> with <a class="ansi-green" href="https://github.com/BrianJ09">Brian Joseph</a>, Gideon Yen, and Sachin Dinesraja
+`
 
 let projects = `I've made a lot of projects over the years, but here are my best ones:
 ${colorText("Made in Swift", "ansi-pink")}
@@ -187,7 +206,93 @@ const commands = {
     },
     "images": displayImages,
     "clear": () => { terminal.innerHTML = ""; return startupMessage; },
+    "achievements": achievements,
+    "curl": async (args) => {
+        const url = args.trim().split(" ")[0]; // Extract URL correctly
+        return await runCurl(url);
+    },
+    "cowsay": (args) => {
+        return generateCowsay(args);
+    }
 };
+
+async function runCurl(url) {
+    if (!url) {
+        return colorText("Usage: curl <URL>", "ansi-red");
+    }
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP Error ${response.status}`);
+        }
+
+        const contentType = response.headers.get("content-type");
+        let data;
+        if (contentType && contentType.includes("application/json")) {
+            const jsonData = await response.json();
+            data = JSON.stringify(jsonData, null, 2);
+        } else {
+            data = await response.text();
+        }
+
+        return applyAnsiColors(data);
+    } catch (error) {
+        return colorText(`Error fetching URL: ${error.message}`, "ansi-red");
+    }
+}
+
+function applyAnsiColors(text) {
+    return text
+        .replace(/\\x1b\[30m/g, '<span class="ansi-black">')
+        .replace(/\\x1b\[31m/g, '<span class="ansi-red">')
+        .replace(/\\x1b\[32m/g, '<span class="ansi-green">')
+        .replace(/\\x1b\[33m/g, '<span class="ansi-yellow">')
+        .replace(/\\x1b\[34m/g, '<span class="ansi-blue">')
+        .replace(/\\x1b\[35m/g, '<span class="ansi-magenta">')
+        .replace(/\\x1b\[36m/g, '<span class="ansi-cyan">')
+        .replace(/\\x1b\[37m/g, '<span class="ansi-white">')
+        .replace(/\\x1b\[90m/g, '<span class="ansi-bright-black">')
+        .replace(/\\x1b\[91m/g, '<span class="ansi-bright-red">')
+        .replace(/\\x1b\[92m/g, '<span class="ansi-bright-green">')
+        .replace(/\\x1b\[93m/g, '<span class="ansi-bright-yellow">')
+        .replace(/\\x1b\[94m/g, '<span class="ansi-bright-blue">')
+        .replace(/\\x1b\[95m/g, '<span class="ansi-bright-magenta">')
+        .replace(/\\x1b\[96m/g, '<span class="ansi-bright-cyan">')
+        .replace(/\\x1b\[97m/g, '<span class="ansi-bright-white">')
+        .replace(/\\x1b\[40m/g, '<span class="ansi-bg-black">')
+        .replace(/\\x1b\[41m/g, '<span class="ansi-bg-red">')
+        .replace(/\\x1b\[42m/g, '<span class="ansi-bg-green">')
+        .replace(/\\x1b\[43m/g, '<span class="ansi-bg-yellow">')
+        .replace(/\\x1b\[44m/g, '<span class="ansi-bg-blue">')
+        .replace(/\\x1b\[45m/g, '<span class="ansi-bg-magenta">')
+        .replace(/\\x1b\[46m/g, '<span class="ansi-bg-cyan">')
+        .replace(/\\x1b\[47m/g, '<span class="ansi-bg-white">')
+        .replace(/\\x1b\[100m/g, '<span class="ansi-bg-bright-black">')
+        .replace(/\\x1b\[101m/g, '<span class="ansi-bg-bright-red">')
+        .replace(/\\x1b\[102m/g, '<span class="ansi-bg-bright-green">')
+        .replace(/\\x1b\[103m/g, '<span class="ansi-bg-bright-yellow">')
+        .replace(/\\x1b\[104m/g, '<span class="ansi-bg-bright-blue">')
+        .replace(/\\x1b\[105m/g, '<span class="ansi-bg-bright-magenta">')
+        .replace(/\\x1b\[106m/g, '<span class="ansi-bg-bright-cyan">')
+        .replace(/\\x1b\[107m/g, '<span class="ansi-bg-bright-white">')
+        .replace(/\\x1b\[0m/g, '</span>');
+}
+
+function generateCowsay(message) {
+    const cow = `
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||
+    `;
+    
+    const topBottom = " " + "_".repeat(message.length + 2);
+    const textLine = `< ${message} >`;
+    return `${topBottom}\n${textLine}\n${topBottom}\n${cow}`;
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const terminal = document.getElementById("terminal");
@@ -207,22 +312,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     input.addEventListener("keydown", async function (event) {
         if (event.key === "Enter") {
-            let cmd = input.value.trim().toLowerCase();
+            let cmdLine = input.value.trim();
             input.value = "";
-
-            terminal.innerHTML += `\ncontyadvait@contyos:~$ ${cmd}\n`;
-
+    
+            terminal.innerHTML += `\ncontyadvait@contyos:~$ ${cmdLine}\n`;
+    
+            let [cmd, ...args] = cmdLine.split(" ");
+            args = args.join(" ").trim(); // Ensure args are properly handled
+    
             let output = commands[cmd] || colorText("Command not found. Type 'help' for available commands.", "ansi-red");
             if (typeof output === "function") {
                 if (output.constructor.name === "AsyncFunction") {
-                    output = await output();
+                    output = await output(args);
                 } else {
-                    output = output();
+                    output = output(args);
                 }
             }
-
+    
             terminal.innerHTML += `${output}\n`;
             window.scrollTo(0, document.body.scrollHeight);
-        }
+        }        
     });
 });
