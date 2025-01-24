@@ -156,7 +156,7 @@ ${colorText("Message by the team : Made with <3 by advaitconty", "ansi-gray")}
 help         ${colorText(":", "ansi-green")} Get help with commands
 about        ${colorText(":", "ansi-green")} Learn more about who this is made by
 starred      ${colorText(":", "ansi-green")} Take a look at the projects I have starred on my GitHub
-projects     ${colorText(":", "ansi-green")} Take a look at the projects I have starred on my GitHub
+projects     ${colorText(":", "ansi-green")} See what I've made over the years
 images       ${colorText(":", "ansi-green")} Check out the images I have taken
 achievements ${colorText(":", "ansi-green")} See what I've done in competitions
 random-cmds  ${colorText(":", "ansi-green")} Check out some random commands I've implemented
@@ -164,7 +164,7 @@ clear        ${colorText(":", "ansi-green")} Clear the terminal screen
 `;
 
 let random_comamands = `Aight so here are some random commands
-curl   : literally acts like the real curl command
+curl   : literally acts like the real curl command - colours don't really work but exist
 cowsay : one of the most random linux features ever
 `
 
@@ -194,7 +194,7 @@ ${colorText("Made in Python", "ansi-pink")}
 <i>You can click on the highlighted text to check the repos out!</i>`
 
 const commands = {
-    "help": colorText("Available commands: help, about, starred, projects, images, clear", "ansi-green"),
+    "help": colorText("Available commands: help, about, starred, projects, images, random-cmds, curl, cowsay, clear", "ansi-green"),
     "about": colorText(`Hey! I'm Advait! I'm a coder, and love physics lore and planes! I'm also an active member of Hack Club, one of the largest teenage hacker groups in the world.\nI mainly code in Swift and Python\n\nFun facts:\nMy favourite plane: A350-1000 and Boeing 777-300ER (such beautiful planes!)\nFavourite language: Swift (so quick and efficient!)`, "ansi-blue"),
     "projects": projects,
     "starred": async () => {
@@ -213,7 +213,8 @@ const commands = {
     },
     "cowsay": (args) => {
         return generateCowsay(args);
-    }
+    },
+    "random-cmds": random_comamands
 };
 
 async function runCurl(url) {
