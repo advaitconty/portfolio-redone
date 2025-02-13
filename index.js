@@ -161,11 +161,19 @@ images       ${colorText(":", "ansi-green")} Check out the images I have taken
 achievements ${colorText(":", "ansi-green")} See what I've done in competitions
 random-cmds  ${colorText(":", "ansi-green")} Check out some random commands I've implemented
 clear        ${colorText(":", "ansi-green")} Clear the terminal screen
+directory    ${colorText(":", "ansi-green")} See all available websites
 `;
 
 let random_comamands = `Aight so here are some random commands
 curl   : literally acts like the real curl command - colours don't really work but exist
 cowsay : one of the most random linux features ever
+`
+let directory = `Here is what else is hosted on advaitconty.com!
+<a class="ansi-yellow" href="https://advaitconty.com"> About me (https://advaitconty.com)</a>: This website!
+<a class="ansi-yellow" href="https://comphelp.advaitconty.com">󰪫 Computing Helpbot (https://comphelp.advaitconty.com)</a>: Practice for your Computing practicals - Self-hosted on my RPi Zero 2W
+<a class="ansi-yellow" href="https://verdi.advaitconty.com">󰌪 Verdi Backend (https://verdi.advaitconty.com)</a>: The backend for Verdi, available for everyone to use - Running on Heroku
+<a class="ansi-yellow" href="https://solstice.advaitconty.com">󱎫 Solstice (https://solstice.advaitconty.com)</a>: The hosting for Solstice's website - Running on Vercel
+<a class="ansi-yellow" href="https://nstem.advaitconty.com">󰆍 nSTEM Website (https://nstem.advaitconty.com)</a>: The website created to document our nSTEM experience, created by Brian Joseph - Running on Vercel
 `
 
 let achievements = `Here are my best achievements:
@@ -187,9 +195,10 @@ ${colorText("Made in Swift", "ansi-pink")}
 <a href="https://github.com/advaitconty/verdi">${colorText('󰌪 Verdi', 'ansi-green')}</a> - A carbon emissions tracker that makes things fun and simple - <i>Winner of the HackClub Cider Winter Event 2024!</i> 
 
 ${colorText("Made in Python", "ansi-pink")}
+<a class="ansi-magenta" href="https://comphelp.advaitconty.com">󰪫 Computing Helpbot</a> - an app designed to solve the problem of not being able to practice computing, powered by Claude, running on Streamlit
 <a href="https://github.com/advaitconty/QMLoaner">${colorText('󰝱 QMLoaner', 'ansi-yellow')}</a> -  A school app that I co-developed with a friend in Python to help automate boring tasks such as form creations and returning guitars, for the SPS Guitar Ensemble CCA</a>
 <a href="https://github.com/advaitconty/moods">${colorText(' Moods', 'ansi-blue')}</a> - A custom music player built in Python that runs on "Moods", which invovles an iOS app and a Raspberry Pi Zero 2 W repurposed to run as a portable music player
-<a href="https://github.com/advaitconty/verdi">${colorText('󰮃 Tetris: The Last Tetris', 'ansi-green')}</a> - My submission for <a href="https://counterspell.hackclub.com">${colorText('Counterspell', 'ansi-yellow')}</a> Globals - it's basically Tetris with a twist at the end!
+<a href="https://github.com/advaitconty/tetris-the-last-tetris">${colorText('󰮃 Tetris: The Last Tetris', 'ansi-green')}</a> - My submission for <a href="https://counterspell.hackclub.com">${colorText('Counterspell', 'ansi-yellow')}</a> Globals - it's basically Tetris with a twist at the end!
 
 <i>You can click on the highlighted text to check the repos out!</i>`
 
@@ -214,7 +223,8 @@ const commands = {
     "cowsay": (args) => {
         return generateCowsay(args);
     },
-    "random-cmds": random_comamands
+    "random-cmds": random_comamands,
+    "directory": directory
 };
 
 async function runCurl(url) {
