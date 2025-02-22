@@ -170,7 +170,7 @@ cowsay : one of the most random linux features ever
 `
 let directory = `Here is what else is hosted on advaitconty.com!
 <a class="ansi-yellow" href="https://advaitconty.com"> About me (https://advaitconty.com)</a>: This website!
-<a class="ansi-yellow" href="https://comphelp.advaitconty.com">󰪫 Computing Helpbot (https://comphelp.advaitconty.com)</a>: Practice for your Computing practicals - Self-hosted on my RPi Zero 2W
+<a class="ansi-yellow" href="https://comphelp.advaitconty.com">󰪫 Computing Helpbot (https://comphelp.advaitconty.com)</a>: Practice for your Computing practicals - Self-hosted on <a class="ansi-green" href="https://hackclub.app">Hack Club NEST</a>
 <a class="ansi-yellow" href="https://verdi.advaitconty.com">󰌪 Verdi Backend (https://verdi.advaitconty.com)</a>: The backend for Verdi, available for everyone to use - Running on Heroku
 <a class="ansi-yellow" href="https://solstice.advaitconty.com">󱎫 Solstice (https://solstice.advaitconty.com)</a>: The hosting for Solstice's website - Running on Vercel
 <a class="ansi-yellow" href="https://nstem.advaitconty.com">󰆍 nSTEM Website (https://nstem.advaitconty.com)</a>: The website created to document our nSTEM experience, created by Brian Joseph - Running on Vercel
