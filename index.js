@@ -174,6 +174,9 @@ let directory = `Here is what else is hosted on advaitconty.com!
 <a class="ansi-yellow" href="https://verdi.advaitconty.com">󰌪 Verdi Backend (https://verdi.advaitconty.com)</a>: The backend for Verdi, available for everyone to use - Running on Heroku
 <a class="ansi-yellow" href="https://solstice.advaitconty.com">󱎫 Solstice (https://solstice.advaitconty.com)</a>: The hosting for Solstice's website - Running on Vercel
 <a class="ansi-yellow" href="https://nstem.advaitconty.com">󰆍 nSTEM Website (https://nstem.advaitconty.com)</a>: The website created to document our nSTEM experience, created by Brian Joseph - Running on Vercel
+<a class="ansi-yellow" href="https://jupyterlab.advaitconty.com"> JupyterHub (https://jupyterlab.advaitconty.com)</a>: A JupyterHub instance so that my friends can use JupyterLab on their devices anytime, anywhere - Runnning on my own RPi Zero 2 W
+<a class="ansi-yellow" href="https://password.jupyterlab.advaitconty.com">󰌇 JupyterHub Password Changer (https://password.jupyterlab.advaitconty.com)</a>: A way for them to change their passwords for JupyterHub - Running on my own RPi Zero 2 W
+<a class="ansi-yellow" href="https://code.advaitconty.com"> VS Code Server (https://code.advaitconty.com)</a>: My own custom VS Code server that I can access anywhere - Running on my own RPi Zero 2 W
 `
 
 let achievements = `Here are my best achievements:
