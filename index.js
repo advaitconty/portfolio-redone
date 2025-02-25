@@ -186,9 +186,9 @@ let achievements = `Here are my best achievements:
 2024: <a class="ansi-yellow" href="https://www.stpatricks.moe.edu.sg/">(School based)</a> ${colorText("Best in Computing and SS + Elective Geography", "gold")}
 
 <b> Team-Based</b>
-2024: <a class="ansi-yellow" href="https://www.mindef.gov.sg/news-and-events/latest-releases/20jan24_nr2">Sentinel Challenge</a> Participation with <a class="ansi-green" href="https://github.com/BrianJ09">Brian Joseph</a>, Tan Chee Tiong and Aaron Tan
-2024: <a class="ansi-yellow" href="https://www.science.edu.sg/for-schools/competitions/national-stem-championship">National STEM Championship</a> Participation with <a class="ansi-green" href="https://github.com/BrianJ09">Brian Joseph</a>, Atman Tripathy and Ahan Goyal
-2023: <a class="ansi-yellow" href="https://swiftinsg.org/">Swift Accelerator Programme</a> Class of 2023, making <a class="ansi-yellow" href="https://github.com/contyadvait/fitstreak">FitStreak</a> with <a class="ansi-green" href="https://github.com/BrianJ09">Brian Joseph</a>, Gideon Yen, and Sachin Dinesraja
+2024: <a class="ansi-yellow" href="https://www.mindef.gov.sg/news-and-events/latest-releases/20jan24_nr2">Sentinel Challenge</a> Participation with <a class="ansi-green" href="https://brianj09.github.io/portfolio/">Brian Joseph</a>, Tan Chee Tiong and Aaron Tan
+2024: <a class="ansi-yellow" href="https://www.science.edu.sg/for-schools/competitions/national-stem-championship">National STEM Championship</a> Participation with <a class="ansi-green" href="https://brianj09.github.io/portfolio/">Brian Joseph</a>, Atman Tripathy and Ahan Goyal
+2023: <a class="ansi-yellow" href="https://swiftinsg.org/">Swift Accelerator Programme</a> Class of 2023, making <a class="ansi-yellow" href="https://github.com/contyadvait/fitstreak">FitStreak</a> with <a class="ansi-green" href="https://brianj09.github.io/portfolio/">Brian Joseph</a>, Gideon Yen, and Sachin Dinesraja
 `
 
 let projects = `I've made a lot of projects over the years, but here are my best ones:
