@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const commandLine = document.createElement("div");
     commandLine.className = "command-line";
     commandLine.innerHTML = `
-        <span class="prompt">contyadvait@contyos:~$</span>
+        <span class="prompt">advaitonty@contybook:~$</span>
         <input type="text" id="input" autofocus>
     `;
     commandContainer.appendChild(commandLine);
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let cmdLine = input.value.trim();
             input.value = "";
     
-            terminal.innerHTML += `\ncontyadvait@contyos:~$ ${cmdLine}\n`;
+            terminal.innerHTML += `\n${colorText("contyadvait@contyos", "ansi-lime")}:~$ ${cmdLine}\n`;
     
             let [cmd, ...args] = cmdLine.split(" ");
             args = args.join(" ").trim(); // Ensure args are properly handled
